@@ -6,7 +6,7 @@ const second = 1000,
   minute = second * 60,
   hour = minute * 60,
   day = hour * 24;
-let countDown = new Date('April 27, 2021 10:11:00').getTime(),
+let countDown = new Date('April 27, 2021 13:00:00').getTime(),
   x = setInterval(function () {
     let now = new Date().getTime(),
       distance = countDown - now;
@@ -35,7 +35,7 @@ const _slideSatu = function () {
     document.body.addEventListener('click', function () {
       _slideDua();
     })
-  }, 7000);
+  }, 3000);
 };
 
 const _slideDua = function () {
@@ -63,7 +63,7 @@ const _slideDua = function () {
         _slideTiga();
       }, 1000);
     })
-  }, 40000);
+  }, 5000);
 };
 
 const _slideTiga = function () {
@@ -82,7 +82,7 @@ const _slideTiga = function () {
         _slideEmpat();
       }, 1000);
     })
-  }, 43000);
+  }, 5000);
 }
 
 function getRandomPosition(element) {
@@ -127,27 +127,16 @@ const _slideLima = function () {
 
   slideLima.addEventListener('animationend', () => {
     slideLima.classList.add('animate__delay-3s')
-    slideLima.classList.replace('animate__bounceIn', 'animate__fadeOut');
-    trims.classList.add('animate__animated', 'animate__fadeOut', 'animate__delay-3s');
+    slideLima.classList.replace('animate__bounceIn');
     setTimeout(() => {
-      trims.remove();
-      setTimeout(() => {
-        slideLima.remove();
-        _slideEnam();
-      }, 1000);
-    }, 6000);
+      trims.stay();
+      }, 3000);
   });
 };
 
-const _slideEnam = function () {
-  const slideEnam = document.getElementById('slideEnam');
-  slideEnam.classList.remove('d-none');
-};
-
-
 new TypeIt("#teks1", {
   strings: ["Assalamualaikum Wr. Wb.", " ", "Saya Aldi Pratama pada hari ini selasa, 27 April 2021 dengan sepenuh hati mengucapkan", " ", "<b>Selamat Ulang Tahun Yang ke - 19</b>", " ", "Kepada Doi, semoga kamu panjang umur, dan bahagia selalu. Aamiin. Sekian surat pernyataan dari saya", , " ", "Wassalamualakaikum Wr. Wb.", " ", "- Aldi Pratama, Cimahi"],
-  startDelay: 2000,
+  startDelay: 4000,
   speed: 75,
   waitUntilVisible: true
 }).go();
